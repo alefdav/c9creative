@@ -46,20 +46,94 @@ function App() {
     {
       icon: <Gamepad2 className="w-8 h-8" />,
       title: "Mundos Personalizados",
-      description: "Criamos mundos únicos e imersivos com roteiros exclusivos para suas lives",
-      image: minecraftMap
+      description: "Criamos mundos únicos e imersivos com roteiros exclusivos usando as melhores ferramentas de cada plataforma",
+      image: minecraftMap,
+      details: ["Command blocks e Datapacks", "Mapas customizados", "Sistemas de progressão"]
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "NPCs com IA",
-      description: "Personagens não-jogáveis com falas roteirizadas e comportamento realista",
-      image: robloxGame
+      description: "Personagens não-jogáveis com falas roteirizadas, comportamento realista e integração com IA moderna",
+      image: robloxGame,
+      details: ["Scripts em Lua/C#", "Diálogos adaptativos", "Comportamento inteligente"]
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Missões Épicas",
-      description: "Puzzles, eventos narrativos e missões personalizadas para engajar sua audiência",
-      image: gtaMission
+      title: "Experiências Roleplay",
+      description: "Eventos narrativos, missões épicas e sistemas de roleplay para máximo engajamento da audiência",
+      image: gtaMission,
+      details: ["Servidores personalizados", "Eventos ao vivo", "Integração com chat"]
+    }
+  ]
+
+  const platforms = [
+    {
+      name: "Minecraft Java",
+      level: 5,
+      category: "Sandbox Criativo",
+      tools: ["Command Blocks", "Datapacks", "Plugins", "Mods", "WorldEdit"],
+      description: "Máximo poder de criação com comunidade ativa",
+      highlight: true
+    },
+    {
+      name: "Roblox",
+      level: 5,
+      category: "Sandbox Criativo", 
+      tools: ["Roblox Studio", "Lua Scripts", "Assets Próprios"],
+      description: "Plataforma completa com monetização integrada",
+      highlight: true
+    },
+    {
+      name: "GTA V (FiveM)",
+      level: 5,
+      category: "Roleplay",
+      tools: ["Scripts Lua/C#", "Assets 3D", "Servidores Custom"],
+      description: "Realismo e roleplay para streaming profissional",
+      highlight: true
+    },
+    {
+      name: "Fortnite (UEFN)",
+      level: 4,
+      category: "Sandbox Criativo",
+      tools: ["Unreal Editor", "Verse", "Mapas Custom"],
+      description: "Eventos épicos e experiências narrativas"
+    },
+    {
+      name: "Garry's Mod",
+      level: 5,
+      category: "Roleplay",
+      tools: ["Lua Scripts", "Mapas Custom", "DarkRP"],
+      description: "Liberdade total para criação e roleplay"
+    },
+    {
+      name: "VRChat",
+      level: 4,
+      category: "Social/VR",
+      tools: ["Unity SDK", "Mundos Custom", "Avatares"],
+      description: "Experiências sociais imersivas"
+    }
+  ]
+
+  const specialties = [
+    {
+      icon: <Sparkles className="w-6 h-6" />,
+      title: "Integração com IA",
+      description: "NPCs inteligentes com GPT e comportamento adaptativo"
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: "Storytelling Interativo", 
+      description: "Narrativas que se adaptam às ações da audiência"
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Eventos ao Vivo",
+      description: "Experiências sincronizadas com a transmissão"
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Sistemas de Progressão",
+      description: "Mecânicas que mantêm a audiência engajada"
     }
   ]
 
@@ -68,39 +142,46 @@ function App() {
       name: "Starter",
       price: "R$ 800",
       duration: "1 hora",
-      game: "Minecraft ou Roblox",
+      game: "Minecraft Java ou Roblox",
       features: [
         "1 mapa personalizado",
         "Roteiro simples",
+        "NPCs básicos",
         "Suporte básico"
       ],
+      platforms: ["Minecraft", "Roblox"],
       popular: false
     },
     {
       name: "Standard",
       price: "R$ 2.000",
       duration: "2-3 horas",
-      game: "Minecraft, Roblox ou GTA",
+      game: "Minecraft, Roblox ou GTA V",
       features: [
         "Missões personalizadas",
-        "NPCs com voz IA",
-        "Roteiro avançado",
+        "NPCs com IA avançada",
+        "Roteiro interativo",
+        "Eventos ao vivo",
         "Suporte premium"
       ],
+      platforms: ["Minecraft", "Roblox", "GTA V", "Fortnite"],
       popular: true
     },
     {
       name: "Ultimate Experience",
       price: "R$ 5.000+",
       duration: "até 5 horas",
-      game: "Minecraft, Roblox ou GTA",
+      game: "Todas as plataformas",
       features: [
         "Arco narrativo completo",
-        "Mapa imersivo",
+        "Mundo imersivo customizado",
+        "IA comportamental avançada",
         "Assets visuais exclusivos",
+        "Integração com chat/doações",
         "Suporte 24/7",
         "Revisões ilimitadas"
       ],
+      platforms: ["Minecraft", "Roblox", "GTA V", "Garry's Mod", "VRChat", "Fortnite"],
       popular: false
     }
   ]
@@ -155,6 +236,7 @@ function App() {
           <div className="hidden md:flex items-center space-x-6">
             <a href="#inicio" className="hover:text-primary transition-colors">Início</a>
             <a href="#servicos" className="hover:text-primary transition-colors">Serviços</a>
+            <a href="#plataformas" className="hover:text-primary transition-colors">Plataformas</a>
             <a href="#pacotes" className="hover:text-primary transition-colors">Pacotes</a>
             <a href="#contato" className="hover:text-primary transition-colors">Contato</a>
           </div>
@@ -193,6 +275,13 @@ function App() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Serviços
+              </a>
+              <a 
+                href="#plataformas" 
+                className="block hover:text-primary transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Plataformas
               </a>
               <a 
                 href="#pacotes" 
@@ -271,55 +360,129 @@ function App() {
               />
             </div>
           </div>
-        </div>
-      </section>
+          </div>
+        </section>
 
-      {/* Services Section */}
-      <section id="servicos" className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gradient">O Que Entregamos</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        {/* Platforms Section */}
+        <section id="plataformas" className="py-20 bg-background/50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 text-gradient">Plataformas Suportadas</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Trabalhamos com as melhores plataformas para criar experiências únicas
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+              {platforms.map((platform, index) => (
+                <Card key={index} className={`bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 ${platform.highlight ? 'ring-2 ring-primary/30' : ''}`}>
+                  <CardHeader>
+                    <div className="flex items-center justify-between mb-2">
+                      <CardTitle className="text-lg">{platform.name}</CardTitle>
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className={`w-4 h-4 ${i < platform.level ? 'text-yellow-400 fill-current' : 'text-gray-600'}`} 
+                          />
+                        ))}
+                      </div>
+                    </div>
+                    <Badge variant="secondary" className="w-fit">
+                      {platform.category}
+                    </Badge>
+                    <CardDescription className="text-sm mt-2">
+                      {platform.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <h4 className="font-semibold text-sm">Ferramentas:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {platform.tools.map((tool, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {tool}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {specialties.map((specialty, index) => (
+                <Card key={index} className="bg-card/30 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 text-center">
+                  <CardContent className="pt-6">
+                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      {specialty.icon}
+                    </div>
+                    <h3 className="font-semibold mb-2">{specialty.title}</h3>
+                    <p className="text-sm text-muted-foreground">{specialty.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Results Section */}
+        <section id="resultados" className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 text-gradient">Resultados</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Criamos experiências únicas e personalizadas para cada streamer
             </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {services.map((service, index) => (
+                  <Card key={index} className="bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group">
+                    <CardHeader>
+                      <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
+                        {service.icon}
+                      </div>
+                      <CardTitle className="text-xl">{service.title}</CardTitle>
+                      <CardDescription className="text-muted-foreground">
+                        {service.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="aspect-video mb-4 rounded-lg overflow-hidden">
+                        <img 
+                          src={service.image} 
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        {service.details.map((detail, idx) => (
+                          <div key={idx} className="flex items-center space-x-2 text-sm">
+                            <CheckCircle className="w-4 h-4 text-primary" />
+                            <span>{detail}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="card-hover bg-card/50 backdrop-blur-sm border-border/50">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4 text-primary">
-                    {service.icon}
-                  </div>
-                  <CardTitle className="text-xl">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base mb-4">
-                    {service.description}
-                  </CardDescription>
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    className="w-full h-40 object-cover rounded-lg"
-                  />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Results Section */}
-      <section className="py-20 bg-card">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gradient">Resultados</h2>
-            <p className="text-xl text-muted-foreground">
-              O que você pode esperar das nossas experiências
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {results.map((result, index) => (
-              <div key={index} className="text-center">
+        {/* Results Section */}
+        <section id="resultados" className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 text-gradient">Resultados</h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                O que você pode esperar das nossas experiências
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {results.map((result, index) => (
+                <div key={index} className="text-center">
                 <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 text-secondary">
                   {result.icon}
                 </div>
