@@ -86,11 +86,33 @@ Substitua as imagens na pasta `src/assets/` e atualize as importações no `App.
 3. **Ultimate Experience** - R$ 5.000+ (até 5 horas, todos os jogos)
 
 ## Deploy
-O site pode ser facilmente deployado em plataformas como:
-- Vercel
-- Netlify
-- GitHub Pages
-- Qualquer servidor web (usando os arquivos da pasta `dist/`)
+
+### GitHub Pages (Automático)
+O projeto está configurado para deploy automático no GitHub Pages. A cada push na branch `main`, o site será automaticamente construído e publicado.
+
+**Configuração inicial no GitHub:**
+1. Vá para **Settings** > **Pages** no seu repositório
+2. Em **Source**, selecione **GitHub Actions**
+3. Faça um push para a branch `main` - o deploy será automático!
+
+### Deploy Manual
+```bash
+# Instalar dependências (se necessário)
+pnpm install
+
+# Deploy manual para GitHub Pages
+pnpm run deploy
+```
+
+### Outras Plataformas
+O site também pode ser deployado em:
+- **Vercel**: Conecte o repositório e o deploy é automático
+- **Netlify**: Arraste a pasta `dist/` ou conecte o repositório
+- **Servidor próprio**: Use os arquivos da pasta `dist/`
+
+### URLs de Deploy
+- **Desenvolvimento**: `http://localhost:5173`
+- **GitHub Pages**: `https://[seu-usuario].github.io/gaming-studio-site/`
 
 ---
 
