@@ -11,7 +11,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/gaming-studio-site/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/c9creative/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
