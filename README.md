@@ -30,7 +30,7 @@ Site profissional e moderno para um estúdio criativo especializado em criar exp
 
 ### Desenvolvimento
 ```bash
-cd gaming-studio-site
+cd c9creative
 pnpm install
 pnpm run dev
 ```
@@ -49,7 +49,7 @@ pnpm run preview
 
 ## Estrutura de Arquivos
 ```
-gaming-studio-site/
+c9creative/
 ├── public/                 # Arquivos públicos
 ├── src/
 │   ├── assets/            # Imagens e assets
@@ -112,7 +112,7 @@ O site também pode ser deployado em:
 
 ### URLs de Deploy
 - **Desenvolvimento**: `http://localhost:5173`
-- **GitHub Pages**: `https://[seu-usuario].github.io/gaming-studio-site/`
+- **GitHub Pages**: `https://[seu-usuario].github.io/c9creative/`
 
 ---
 
